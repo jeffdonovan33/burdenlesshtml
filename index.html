@@ -1,415 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Burdenless AI — Let Burdenless be the office</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Burdenless AI | AI for businesses without a tech department</title>
+<meta name="description" content="Burdenless AI finds the hours your business loses to manual work, builds the AI workflow that gets them back, and trains your people to run it. Start with a free discussion.">
+<meta property="og:title" content="Burdenless AI">
+<meta property="og:description" content="AI for businesses without a tech department. Start with a free discussion.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://burdenlessai.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B1F3A'/%3E%3Cpath d='M20 14h14a11 11 0 0 1 7 19.5A12 12 0 0 1 35 50H20z' fill='none' stroke='%234ADE80' stroke-width='6' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
 <style>
-  :root{
-    --navy:#0f1c2f;
-    --navy-dark:#0a111d;
-    --navy-light:#162943;
-    --ink:#070b13;
-    --card:#102036;
-    --gold:#c8a24a;
-    --gold-bright:#d9b75f;
-    --gold-line:rgba(200,162,74,.28);
-    --gold-line-soft:rgba(200,162,74,.16);
-    --cream:#f2efe7;
-    --muted:#93a1b4;
-    --muted-dim:#71808f;
-    --serif:"Cormorant Garamond",Georgia,serif;
-    --sans:"Jost",system-ui,-apple-system,sans-serif;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    font-family:var(--sans);
-    background:var(--navy);
-    color:var(--muted);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:1120px;margin:0 auto;padding:0 48px}
-  section{position:relative}
+:root {
+  --navy: #0B1F3A;
+  --navy-line: #25426B;
+  --ink: #0E1B2E;
+  --body: #3D4A5C;
+  --muted: #4A5568;
+  --on-navy: #D3DCE8;
+  --on-navy-muted: #B4C2D4;
+  --line: #DCE3EC;
+  --line-strong: #B7C3D1;
+  --tint: #EEF3F8;
+  --green: #177245;
+  --accent: #4ADE80;
+  --display: 'Space Grotesk', system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: Inter, system-ui, sans-serif; color: var(--ink); background: #fff; line-height: 1.55; font-size: 17px; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, p, ul { margin: 0; }
+a { color: var(--navy); }
+a:hover { color: #1D3F6E; }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: 1160px; margin: 0 auto; padding-left: 28px; padding-right: 28px; }
+.dark { background: var(--navy); color: #fff; }
+.eyebrow { font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); }
+.dark .eyebrow { color: var(--accent); }
+h2 { font-family: var(--display); font-weight: 700; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -0.02em; text-wrap: balance; }
+h3 { font-family: var(--display); font-weight: 600; font-size: 21px; line-height: 1.25; }
+.btn { display: inline-block; background: var(--accent); color: var(--navy); text-decoration: none; font-weight: 600; font-size: 17px; padding: 16px 26px; border-radius: 6px; transition: background 0.15s; }
+.btn:hover { background: #6EE7A0; color: var(--navy); }
+.btn.small { font-size: 15px; padding: 12px 20px; }
+.stack { display: flex; flex-direction: column; }
+.cols { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); }
 
-  /* type */
-  .eyebrow{
-    font-family:var(--sans);
-    font-weight:500;
-    font-size:.72rem;
-    letter-spacing:.28em;
-    text-transform:uppercase;
-    color:var(--gold);
-  }
-  h1,h2,h3{font-family:var(--serif);color:var(--cream);font-weight:500;line-height:1.08}
-  h1{font-size:clamp(2.8rem,6vw,4.6rem)}
-  h2{font-size:clamp(2.1rem,4.4vw,3.2rem)}
-  .gold-italic{font-style:italic;color:var(--gold-bright);font-weight:500}
-  p{font-weight:300;font-size:1.02rem;color:var(--muted)}
-  .lead{font-size:1.08rem;max-width:34rem}
-  .rule{width:62px;height:1px;background:var(--gold);margin:1.8rem 0;opacity:.85}
+/* nav */
+.nav { padding-top: 22px; padding-bottom: 22px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; }
+.brand { font-family: var(--display); font-weight: 700; font-size: 22px; letter-spacing: -0.01em; color: #fff; text-decoration: none; }
+.brand:hover { color: #fff; }
+.nav nav { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; }
+.nav nav a:not(.btn) { color: var(--on-navy); text-decoration: none; font-size: 15px; padding: 12px 0; }
+.nav nav a:not(.btn):hover { color: #fff; }
 
-  /* header */
-  .site-head{border-bottom:1px solid var(--gold-line-soft)}
-  .site-head .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:30px;padding-bottom:30px}
-  .brand{display:flex;align-items:center;gap:16px}
-  .brand .mark{flex:0 0 46px}
-  .brand .name{font-family:var(--serif);font-size:1.9rem;color:var(--cream);font-weight:500;letter-spacing:.01em}
-  .brand .name b{color:var(--gold);font-weight:500}
-  .head-right{text-align:right;line-height:1.5}
-  .head-right a{color:var(--gold);text-decoration:none;font-size:.92rem;letter-spacing:.04em;font-weight:500}
-  .head-right .who{color:var(--muted-dim);font-size:.86rem;letter-spacing:.05em}
+/* hero */
+.hero { padding-top: 72px; padding-bottom: 96px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 56px; align-items: center; }
+.hero .stack { gap: 26px; }
+h1 { font-family: var(--display); font-weight: 700; font-size: clamp(40px, 5vw, 68px); line-height: 1.04; letter-spacing: -0.025em; text-wrap: balance; }
+.lede { font-size: 20px; color: var(--on-navy); max-width: 34em; text-wrap: pretty; }
+.cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; }
+.cta-note { font-size: 15px; color: var(--on-navy-muted); }
+.card { background: #fff; color: var(--ink); border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 18px; box-shadow: 0 24px 60px rgba(0,0,0,0.35); }
+.card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+.card-head strong { font-family: var(--display); font-weight: 600; font-size: 18px; }
+.card-head span { font-size: 13px; color: var(--muted); }
+.area { padding: 14px 0; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 4px; }
+.area .label { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); }
+.area .before { font-size: 15px; color: var(--muted); }
+.area .after { font-size: 16px; font-weight: 600; }
+.card-foot { border-top: 1px solid #C5CFDB; padding-top: 16px; font-size: 16px; }
 
-  /* hero */
-  .hero{background:
-      radial-gradient(120% 90% at 18% 8%,rgba(200,162,74,.05),transparent 55%),
-      var(--navy);
-    padding:96px 0 110px}
-  .pill{
-    display:inline-block;border:1px solid var(--gold-line);
-    padding:11px 20px;font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;
-    color:var(--gold);font-weight:500;margin-bottom:42px}
-  .hero h1{margin-bottom:0}
-  .hero .lead{margin-top:.4rem}
+/* sections */
+section { scroll-margin-top: 16px; }
+.pad { padding-top: 96px; padding-bottom: 96px; }
+.section-head { display: flex; flex-direction: column; gap: 14px; margin-bottom: 44px; }
+.box { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 12px; }
+.box p, .point p, .about p, .work li span:last-child, .work-intro p { color: var(--body); }
 
-  /* generic section padding */
-  .band{padding:92px 0}
-  .band--dark{background:var(--navy-dark)}
-  .band--light{background:var(--navy-light)}
-  .band--ink{background:var(--ink)}
+.steps { grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); }
+.step { border: 1px solid var(--line); border-radius: 10px; padding: 32px; display: flex; flex-direction: column; gap: 16px; }
+.step .num { font-family: var(--display); font-weight: 700; font-size: 44px; line-height: 1; color: var(--green); }
+.step h3 { font-size: 26px; }
+.step p { color: var(--body); }
+.step .price { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line); font-weight: 600; color: var(--ink); }
+.step .price.free { color: var(--green); }
+.step.first { background: var(--navy); color: #fff; border-color: var(--navy); }
+.step.first .num, .step.first .price { color: var(--accent); }
+.step.first p { color: var(--on-navy); }
+.step.first .price { border-top-color: var(--navy-line); }
 
-  /* reality / pain cards */
-  .reality h2{margin:.6rem 0 0}
-  .pain-grid{
-    margin-top:56px;border:1px solid var(--gold-line-soft);border-radius:3px;
-    display:grid;grid-template-columns:repeat(3,1fr)}
-  .pain-cell{padding:48px 40px 52px}
-  .pain-cell + .pain-cell{border-left:1px solid var(--gold-line-soft)}
-  .pain-num{font-family:var(--serif);font-size:3.4rem;color:rgba(200,162,74,.42);line-height:1;font-weight:500}
-  .pain-cell h3{font-family:var(--sans);font-weight:600;font-size:1.06rem;color:var(--cream);margin:30px 0 16px;line-height:1.35}
-  .pain-cell p{font-size:.98rem}
+.points { gap: 40px 48px; }
+.point { border-top: 3px solid var(--green); padding-top: 18px; display: flex; flex-direction: column; gap: 8px; }
 
-  /* what we do */
-  .wwd h2{margin:.6rem 0 0;max-width:24ch}
-  .feature-list{margin-top:60px;display:flex;flex-direction:column}
-  .feature{display:grid;grid-template-columns:84px 1fr;gap:8px;padding:34px 0}
-  .feature + .feature{border-top:1px solid var(--gold-line-soft)}
-  .ficon{width:52px;height:52px;border:1px solid var(--gold-line);border-radius:50%;
-    display:flex;align-items:center;justify-content:center}
-  .ficon svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:1.4}
-  .feature h3{font-family:var(--sans);font-weight:600;font-size:1.12rem;color:var(--cream);margin-bottom:12px}
-  .feature p{max-width:48rem}
+.tint { background: var(--tint); }
+.work { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr)); gap: 48px 64px; align-items: start; }
+.work-intro { display: flex; flex-direction: column; gap: 18px; }
+.work-intro p { max-width: 30em; }
+.work ul { list-style: none; padding: 0; display: flex; flex-direction: column; border-bottom: 1px solid var(--line-strong); }
+.work li { padding: 20px 0; border-top: 1px solid var(--line-strong); display: flex; flex-direction: column; gap: 4px; }
+.work li span:first-child { font-family: var(--display); font-weight: 600; font-size: 20px; }
 
-  /* math card */
-  .math-wrap{padding:78px 0}
-  .math{border:1px solid var(--gold-line);border-radius:4px;background:linear-gradient(180deg,#0b1119,#0a0f17);
-    padding:64px 60px;display:grid;grid-template-columns:1.05fr 1fr;gap:60px;align-items:center}
-  .math h2{margin:.8rem 0 0}
-  .math .body{margin-top:1.6rem;max-width:30rem}
-  .stats{display:flex;flex-direction:column}
-  .stat{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;padding:24px 0}
-  .stat + .stat{border-top:1px solid var(--gold-line-soft)}
-  .stat .fig{font-family:var(--serif);font-weight:500;color:var(--gold-bright);font-size:3.1rem;line-height:.95;white-space:nowrap}
-  .stat .lab{font-size:.95rem;color:var(--muted)}
+.about { max-width: 760px; display: flex; flex-direction: column; gap: 18px; }
 
-  /* products */
-  .prod h2{margin:.6rem 0 0;max-width:18ch}
-  .prod-grid{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .prod-card{border:1px solid var(--gold-line-soft);border-top:2px solid var(--gold);border-radius:3px;
-    padding:38px 32px 42px}
-  .prod-card .tag{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:500}
-  .prod-card h3{font-family:var(--serif);font-size:1.85rem;font-weight:500;color:var(--cream);margin:18px 0 18px}
-  .prod-card .desc{font-size:.96rem;margin-bottom:22px}
-  .prod-card ul{list-style:none}
-  .prod-card li{position:relative;padding-left:22px;font-size:.94rem;color:var(--muted);margin:12px 0;font-weight:300}
-  .prod-card li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.closing .wrap.pad { display: flex; flex-direction: column; align-items: flex-start; gap: 26px; }
+.closing h2 { font-size: clamp(34px, 4.4vw, 60px); line-height: 1.05; letter-spacing: -0.025em; max-width: 16em; }
+.closing .lede { max-width: 32em; }
+.closing .email { color: #fff; font-size: 17px; padding: 12px 0; }
+footer { border-top: 1px solid var(--navy-line); }
+footer .wrap { padding-top: 28px; padding-bottom: 28px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; font-size: 14px; color: var(--on-navy-muted); }
 
-  /* pricing */
-  .pricing h2{margin:.6rem 0 0}
-  .price-panel{margin-top:58px;border:1px solid var(--gold-line);border-radius:4px;
-    background:linear-gradient(180deg,#0b1119,#0a0f17);
-    display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:30px;padding:58px 48px}
-  .price-main,.price-add{text-align:center}
-  .price-big{font-family:var(--serif);font-size:4.4rem;color:var(--cream);font-weight:500;line-height:1}
-  .price-unit{font-size:1.5rem;color:var(--muted-dim);margin-left:6px}
-  .price-cap{font-size:.98rem;color:var(--muted);margin-top:16px;font-weight:300}
-  .price-plus{font-family:var(--serif);font-size:2.6rem;color:var(--gold);line-height:1}
-  .price-note{max-width:58rem;margin:34px auto 0;text-align:center;font-size:1.02rem;color:var(--muted);font-weight:300}
-
-  /* cta */
-  .cta{padding:96px 0}
-  .cta-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center}
-  .cta h2{max-width:14ch}
-  .cta .body{margin-top:1.6rem;max-width:30rem}
-  .cta-right{text-align:right}
-  .cta-right .sig{font-family:var(--serif);font-size:1.7rem;color:var(--cream);font-weight:500}
-  .cta-right .role{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-dim);margin:8px 0 28px}
-  .btn{display:inline-block;background:var(--gold);color:#1a1408;text-decoration:none;
-    font-weight:600;letter-spacing:.12em;font-size:.85rem;text-transform:uppercase;
-    padding:18px 34px;border-radius:2px;transition:background .2s}
-  .btn:hover{background:var(--gold-bright)}
-  .cta-right .link{display:block;margin-top:20px;color:var(--gold);text-decoration:none;font-size:.92rem;letter-spacing:.04em}
-
-  footer{border-top:1px solid var(--gold-line-soft)}
-  footer .wrap{display:flex;justify-content:space-between;align-items:center;
-    padding-top:30px;padding-bottom:30px;font-size:.82rem;color:var(--muted-dim);letter-spacing:.03em}
-  footer a{color:var(--gold);text-decoration:none}
-
-  /* responsive */
-  @media(max-width:980px){
-    .prod-grid{grid-template-columns:1fr}
-  }
-  @media(max-width:860px){
-    .wrap{padding:0 26px}
-    .site-head .wrap{flex-direction:column;gap:16px;text-align:center}
-    .head-right{text-align:center}
-    .hero{padding:64px 0 72px}
-    .band{padding:64px 0}
-    .pain-grid,.prod-grid,.price-panel,.math,.cta-grid{grid-template-columns:1fr}
-    .pain-cell + .pain-cell{border-left:none;border-top:1px solid var(--gold-line-soft)}
-    .math{padding:44px 32px;gap:36px}
-    .feature{grid-template-columns:1fr;gap:18px}
-    .cta-right,.cta-right.cta-right{text-align:left}
-    footer .wrap{flex-direction:column;gap:10px;text-align:center}
-  }
-  @media print{
-    body{background:#fff}
-    .hero,.band--dark,.band--light,.band--ink,.math{background:#fff !important}
-    h1,h2,h3,.brand .name{color:#11203a}
-  }
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .wrap { padding-left: 20px; padding-right: 20px; }
+  .hero { padding-top: 40px; padding-bottom: 64px; gap: 40px; }
+  .pad { padding-top: 64px; padding-bottom: 64px; }
+  .nav nav a:not(.btn) { display: none; }
+  .card, .step, .box { padding: 22px; }
+  .lede { font-size: 18px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<header class="site-head">
-  <div class="wrap">
-    <div class="brand">
-      <svg class="mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="24" cy="24" r="22" stroke="#c8a24a" stroke-width="1.3"/>
-        <ellipse cx="24" cy="24" rx="21" ry="8.5" stroke="#c8a24a" stroke-width="1.3"/>
-        <ellipse cx="24" cy="24" rx="8.5" ry="21" stroke="#c8a24a" stroke-width="1.3"/>
-        <circle cx="24" cy="24" r="3.4" fill="#c8a24a"/>
-      </svg>
-      <span class="name">Burdenless <b>AI</b></span>
+<header class="dark" id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top">Burdenless AI</a>
+    <nav aria-label="Main">
+      <a href="#how">How it works</a>
+      <a href="#approach">How we do it</a>
+      <a href="#work">What we take off your plate</a>
+      <a href="#about">About</a>
+      <a class="btn small" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2IzNTVSiTkthAw-MrWxS-xYI8bpk3GoOJ2xWqG12dR9WXm9BjoEsiIFPHNjbeuoDRSe6bQC50L" target="_blank" rel="noopener">Book a free call</a>
+    </nav>
+  </div>
+
+  <div class="wrap hero">
+    <div class="stack">
+      <p class="eyebrow">AI for businesses without a tech department</p>
+      <h1>Take the busywork off your team's plate.</h1>
+      <p class="lede">We find the hours your business loses to manual work, build the AI workflow that gets them back, and train your people to run it.</p>
+      <div class="cta-row">
+        <a class="btn" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2IzNTVSiTkthAw-MrWxS-xYI8bpk3GoOJ2xWqG12dR9WXm9BjoEsiIFPHNjbeuoDRSe6bQC50L" target="_blank" rel="noopener">Book a free call</a>
+        <span class="cta-note">The first conversation is free. No jargon, no obligation.</span>
+      </div>
     </div>
-    <div class="head-right">
-      <a href="https://burdenlessai.com">burdenlessai.com</a><br>
-      <span class="who">Jeff Donovan | Founder</span><br>
-      <a href="tel:+16103140813">610-314-0813</a>
+
+    <div class="card">
+      <div class="card-head"><strong>Where AI goes to work in your business</strong><span>Examples</span></div>
+      <div>
+        <div class="area"><span class="label">Sales</span><span class="before">Today: leads wait hours for a reply.</span><span class="after">With AI: every lead is answered in minutes.</span></div>
+        <div class="area"><span class="label">Office</span><span class="before">Today: the same information gets typed three times.</span><span class="after">With AI: entered once, updated everywhere.</span></div>
+        <div class="area"><span class="label">Your team</span><span class="before">Today: answers are buried in old files and emails.</span><span class="after">With AI: ask a question, get the answer.</span></div>
+        <div class="area"><span class="label">You, the owner</span><span class="before">Today: reports are built by hand every week.</span><span class="after">With AI: your numbers are ready before you ask.</span></div>
+      </div>
+      <div class="card-foot">Every business is different. We find where AI fits yours.</div>
     </div>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="wrap">
-    <span class="pill">For trades business owners</span>
-    <h1>You built this business<br>with your hands.<br><span class="gold-italic">Let Burdenless be the office.</span></h1>
-    <div class="rule"></div>
-    <p class="lead">Burdenless AI helps small trade business owners be more productive, make more money, and get time back, without hiring anyone new.</p>
+<main>
+<section class="wrap pad" style="padding-bottom: 40px">
+  <div class="section-head"><h2 style="max-width: 20em">Most businesses pay for AI and use it like a search engine.</h2></div>
+  <div class="cols">
+    <div class="box"><h3>"We don't have a tech person."</h3><p>You don't need one. We set everything up inside the tools you already use, and we stay on call after it's running.</p></div>
+    <div class="box"><h3>"We tried ChatGPT. It didn't stick."</h3><p>A chat window is not a workflow. We connect AI to the actual job, so the work gets done without anyone remembering to open a tab.</p></div>
+    <div class="box"><h3>"We don't know where to start."</h3><p>Start with a free call. If it makes sense to go further, the audit gives you a ranked list of where AI saves the most time and what to do first.</p></div>
   </div>
 </section>
 
-<!-- THE REALITY -->
-<section class="band band--dark reality">
-  <div class="wrap">
-    <span class="eyebrow">The reality</span>
-    <h2>You wear every hat.<br>Nobody built software for that.</h2>
-    <div class="pain-grid">
-      <div class="pain-cell">
-        <div class="pain-num">01</div>
-        <h3>Missed calls while on the job</h3>
-        <p>Every call you can't answer is a job someone else gets. Emergency calls hurt the most, they're the highest-ticket work you do.</p>
-      </div>
-      <div class="pain-cell">
-        <div class="pain-num">02</div>
-        <h3>Scheduling that eats your evening</h3>
-        <p>Figuring out who goes where tomorrow takes time you don't have. Then someone calls in sick and it starts over.</p>
-      </div>
-      <div class="pain-cell">
-        <div class="pain-num">03</div>
-        <h3>Paperwork that follows you home</h3>
-        <p>Invoices, job notes, follow-ups, reviews, all of it waits until you're off the truck, tired, and just want to stop working.</p>
-      </div>
-    </div>
+<section id="how" class="wrap" style="padding-top: 72px; padding-bottom: 72px">
+  <div class="section-head"><p class="eyebrow">How it works</p><h2>It starts with a free discussion.</h2></div>
+  <div class="cols steps">
+    <div class="step first"><span class="num">01</span><h3>Initial discussion</h3><p>You and I talk through your business, where the time goes, and how AI could fit. No cost and no obligation.</p><p class="price">Free</p></div>
+    <div class="step"><span class="num">02</span><h3>Audit</h3><p>We sit down with you and your team, map where the hours go, and hand you a written plan: what to automate, in what order, and what it should save.</p><p class="price free">Free</p></div>
+    <div class="step"><span class="num">03</span><h3>Build</h3><p>We build the one workflow the audit ranks first, at a fixed price agreed up front. You see it working on your own data before you pay for anything else.</p><p class="price">Fixed quote after your audit</p></div>
+    <div class="step"><span class="num">04</span><h3>Train and support</h3><p>We teach your people to use AI in their own jobs, keep what we built running, and add the next workflow when you are ready.</p><p class="price">Priced to fit your business</p></div>
   </div>
 </section>
 
-<!-- WHAT WE DO -->
-<section class="band band--light wwd">
-  <div class="wrap">
-    <span class="eyebrow">What we do</span>
-    <h2>Burdenless AI is your office. Built for one person.</h2>
-    <div class="feature-list">
-
-      <div class="feature">
-        <div class="ficon">
-          <svg viewBox="0 0 24 24"><path d="M5 4h3l1.5 4-2 1.3a11 11 0 0 0 5.2 5.2l1.3-2 4 1.5v3a2 2 0 0 1-2.2 2A16 16 0 0 1 3 6.2 2 2 0 0 1 5 4Z" stroke-linejoin="round"/></svg>
-        </div>
-        <div>
-          <h3>Every call answered. Every emergency flagged.</h3>
-          <p>The AI answers your inbound calls when you can't pick up. It captures the job details, understands urgency, books appointments within your guidelines, and texts you immediately for anything that can't wait. No voicemail. No lost jobs.</p>
-        </div>
-      </div>
-
-      <div class="feature">
-        <div class="ficon">
-          <svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9h17M8 3.5v3M16 3.5v3"/></svg>
-        </div>
-        <div>
-          <h3>Tomorrow's schedule, sorted tonight.</h3>
-          <p>Every evening, review tomorrow in one screen. Assign each job to the right tech, set or move dates, and lock the plan in minutes. Your crew sees their day in the app, so there's no dispatch call in the morning.</p>
-        </div>
-      </div>
-
-      <div class="feature">
-        <div class="ficon">
-          <svg viewBox="0 0 24 24"><path d="M12 3l2.1 4.6L19 8.3l-3.5 3.4.9 4.9L12 14.3 7.6 16.6l.9-4.9L5 8.3l4.9-.7L12 3Z" stroke-linejoin="round"/></svg>
-        </div>
-        <div>
-          <h3>On-site AI in every tech's pocket.</h3>
-          <p>Open a job and the app briefs the tech on what they're walking into: customer, scope, and your notes for the visit. Out in the field they can ask it anything, how to service the unit, what a part does, what to check next, and get an answer on the spot. No call to the office.</p>
-        </div>
-      </div>
-
-      <div class="feature">
-        <div class="ficon">
-          <svg viewBox="0 0 24 24"><path d="M7 3.5h7l4 4V20a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4.5a1 1 0 0 1 1-1Z" stroke-linejoin="round"/><path d="M13.5 3.5V8h4.5"/></svg>
-        </div>
-        <div>
-          <h3>Close the job from the truck.</h3>
-          <p>Your techs tap one button when the job is done. The invoice goes to the customer, a job summary comes to you, the parts used come out of inventory automatically, the Google review request fires, and the 30-day follow-up is scheduled. All of it, from the field. No office needed.</p>
-        </div>
-      </div>
-
-    </div>
+<section id="approach" class="wrap" style="padding-top: 24px; padding-bottom: 96px">
+  <div class="section-head"><p class="eyebrow">How we do it</p><h2 style="max-width: 20em">Here is exactly what happens when you work with us.</h2></div>
+  <div class="cols points">
+    <div class="point"><h3>We start with the people doing the work.</h3><p>We watch how the job gets done today, step by step, before we suggest changing anything.</p></div>
+    <div class="point"><h3>We build on the tools you already pay for.</h3><p>Your email, your spreadsheets, your CRM. We connect AI to them instead of selling you new software.</p></div>
+    <div class="point"><h3>AI drafts. Your people decide.</h3><p>Anything that goes to a customer waits for a person to approve it, until you tell us otherwise.</p></div>
+    <div class="point"><h3>We test it on your real work.</h3><p>Every workflow is checked against real examples from your business before it goes live, and we track the hours it saves after.</p></div>
+    <div class="point"><h3>Your information stays yours.</h3><p>It stays in your accounts. We never resell it or reuse it for another client.</p></div>
+    <div class="point"><h3>You own what we build.</h3><p>No lock-in. If we part ways, the workflows keep running and the logins are yours.</p></div>
   </div>
 </section>
 
-<!-- THE MATH -->
-<section class="band--ink math-wrap">
-  <div class="wrap">
-    <div class="math">
-      <div>
-        <span class="eyebrow">The math</span>
-        <h2>It pays for itself the first week.</h2>
-        <div class="rule"></div>
-        <p class="body">Most trades owners have normalized missed calls. The cost is invisible until you run the numbers. One captured emergency call covers months of Burdenless AI. Your guys are already on payroll. Every hour they recover is pure profit, not just revenue.</p>
-      </div>
-      <div class="stats">
-        <div class="stat">
-          <div class="fig">$1,400</div>
-          <div class="lab">minimum value of one captured emergency call</div>
-        </div>
-        <div class="stat">
-          <div class="fig">1.5x</div>
-          <div class="lab">more techs worth of productivity, with no payroll</div>
-        </div>
-        <div class="stat">
-          <div class="fig">45 min</div>
-          <div class="lab">saved per tech per day on paperwork and dispatch</div>
-        </div>
-      </div>
+<section id="work" class="tint">
+  <div class="wrap work" style="padding-top: 88px; padding-bottom: 88px">
+    <div class="work-intro">
+      <p class="eyebrow">What we take off your plate</p>
+      <h2>The work nobody was hired to do.</h2>
+      <p>If someone on your team does it the same way every week, copying from one place to another, it is probably on this list.</p>
     </div>
+    <ul>
+      <li><span>Lead follow-up</span><span>Every inquiry answered and logged, with a reply drafted for your approval.</span></li>
+      <li><span>Quotes and proposals</span><span>First drafts built from your price list and past jobs.</span></li>
+      <li><span>Data entry between systems</span><span>Information typed once and sent everywhere it needs to go.</span></li>
+      <li><span>Weekly reporting</span><span>The numbers you ask for every Monday, ready before you ask.</span></li>
+      <li><span>Prospect and account research</span><span>Who to call, why, and what to say, pulled together overnight.</span></li>
+      <li><span>Meeting notes and to-dos</span><span>Every meeting turned into a task list with owners.</span></li>
+    </ul>
   </div>
 </section>
 
-<!-- TWO PRODUCTS -->
-<section class="band band--light prod">
-  <div class="wrap">
-    <span class="eyebrow">Three parts. One platform.</span>
-    <h2>The phone, the truck, and the back office. Handled.</h2>
-    <div class="prod-grid">
-      <div class="prod-card">
-        <span class="tag">Product 01</span>
-        <h3>Inbound AI Agent</h3>
-        <p class="desc">Answers every call you can't take. Captures job details, flags emergencies, books appointments. You approve everything, the AI never acts on its own for high-stakes decisions.</p>
-        <ul>
-          <li>24/7 call answering in your business name</li>
-          <li>Emergency detection and immediate owner alert</li>
-          <li>Appointment booking within your guardrails</li>
-          <li>SMS confirmation to every caller</li>
-          <li>Full call summary delivered to you</li>
-        </ul>
-      </div>
-      <div class="prod-card">
-        <span class="tag">Product 02</span>
-        <h3>Field Tech App</h3>
-        <p class="desc">Works like advanced text messaging. If your tech can text, he can use this. It shows him the job, answers his questions on site, handles change orders, and closes out with one tap.</p>
-        <ul>
-          <li>On-site AI that briefs the tech and answers equipment questions</li>
-          <li>Digital customer approval for change orders</li>
-          <li>One-tap job close: invoice sent, owner notified</li>
-          <li>Parts used come out of inventory automatically</li>
-          <li>Automatic Google review request post-job</li>
-          <li>30-day follow-up scheduled automatically</li>
-        </ul>
-      </div>
-      <div class="prod-card">
-        <span class="tag">Product 03</span>
-        <h3>Owner Dashboard</h3>
-        <p class="desc">Your whole business on one screen. The money, the jobs, and whatever needs you, from anywhere.</p>
-        <ul>
-          <li>Today's jobs and today's revenue at a glance</li>
-          <li>Emergency calls surfaced the moment they land</li>
-          <li>Tomorrow's schedule: assign techs, set dates, approve</li>
-          <li>Outstanding invoices with one-tap nudge and mark-paid</li>
-          <li>Easy inventory management, stock stays current as jobs close</li>
-          <li>Weekly and monthly revenue, plus your top customers</li>
-        </ul>
-      </div>
-    </div>
+<section id="about" class="wrap pad">
+  <div class="about">
+    <p class="eyebrow">Who you will work with</p>
+    <h2>I start with your business, not the technology.</h2>
+    <p>I'm Jeff Donovan. I have spent 20 years in sales, and I have helped businesses build AI workflows their teams use every day. I started Burdenless AI because the businesses that could gain the most from this are the ones with nobody on staff to set it up.</p>
+    <p>You work with me directly. I am based outside Philadelphia and happy to meet in person.</p>
   </div>
 </section>
+</main>
 
-<!-- PRICING -->
-<section class="band band--dark pricing">
-  <div class="wrap">
-    <span class="eyebrow">Simple pricing</span>
-    <h2>Priced by crew size.<br>Not by features.</h2>
-    <div class="price-panel">
-      <div class="price-main">
-        <div class="price-big">$349<span class="price-unit">/mo</span></div>
-        <div class="price-cap">For you, the owner-operator. Everything included.</div>
-      </div>
-      <div class="price-plus">+</div>
-      <div class="price-add">
-        <div class="price-big">$50<span class="price-unit">/mo</span></div>
-        <div class="price-cap">Per tech you add. That's the whole price.</div>
-      </div>
+<section id="book" class="dark closing">
+  <div class="wrap pad">
+    <h2>Find out where your hours are going.</h2>
+    <p class="lede">Book a free call. We will talk through your business and where AI could help. If it is not a fit, we will tell you so.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2IzNTVSiTkthAw-MrWxS-xYI8bpk3GoOJ2xWqG12dR9WXm9BjoEsiIFPHNjbeuoDRSe6bQC50L" target="_blank" rel="noopener">Book a free call</a>
+      <a class="email" href="mailto:jeff@burdenlessai.com">jeff@burdenlessai.com</a>
     </div>
-    <p class="price-note">Every customer gets the entire platform, all three parts, with no feature-gating and no tiers. I set the whole thing up for you myself, and you call me directly when you need me, never a support ticket. The only thing that ever moves your price is how many techs you put on it.</p>
   </div>
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Burdenless AI. Malvern, Pennsylvania.</span>
+      <span>AI audits, builds, and training for small businesses.</span>
+    </div>
+  </footer>
 </section>
-
-<!-- CTA -->
-<section class="cta">
-  <div class="wrap cta-grid">
-    <div>
-      <h2>Ready to stop leaving jobs on the table?</h2>
-      <p class="body">No long contracts. No complicated setup. We configure everything for you. If something breaks, you call me directly, not a support ticket.</p>
-    </div>
-    <div class="cta-right">
-      <div class="sig">Jeff Donovan</div>
-      <div class="role">Founder, Burdenless AI</div>
-      <a class="btn" href="https://burdenlessai.com">Visit burdenlessai.com</a>
-      <a class="link" href="tel:+16103140813">610-314-0813</a>
-      <a class="link" href="https://burdenlessai.com">burdenlessai.com</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <span>© 2026 Burdenless AI · Built exclusively for trade businesses</span>
-    <span class="foot-contact"><a href="tel:+16103140813">610-314-0813</a> &nbsp;·&nbsp; <a href="https://burdenlessai.com">burdenlessai.com</a></span>
-  </div>
-</footer>
 
 </body>
 </html>
