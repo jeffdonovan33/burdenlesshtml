@@ -92,6 +92,14 @@ section { scroll-margin-top: 16px; }
 .step.first p { color: var(--on-navy); }
 .step.first .price { border-top-color: var(--navy-line); }
 
+.pricing { list-style: none; padding: 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; max-width: 880px; }
+.pricing li { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; gap: 6px 24px; padding: 24px 32px; border-top: 1px solid var(--line); }
+.pricing li:first-child { border-top: 0; }
+.pricing h3 { font-size: 21px; }
+.pricing .cost { font-family: var(--display); font-weight: 600; font-size: 20px; color: var(--navy); text-align: right; }
+.pricing .cost.free { color: var(--green); }
+.pricing .note { grid-column: 1 / -1; color: var(--body); }
+
 .points { gap: 40px 48px; }
 .point { border-top: 3px solid var(--green); padding-top: 18px; display: flex; flex-direction: column; gap: 8px; }
 
@@ -119,6 +127,8 @@ footer .wrap { padding-top: 28px; padding-bottom: 28px; display: flex; flex-wrap
   .pad { padding-top: 64px; padding-bottom: 64px; }
   .nav nav a:not(.btn) { display: none; }
   .card, .step, .box { padding: 22px; }
+  .pricing li { grid-template-columns: 1fr; padding: 20px 22px; }
+  .pricing .cost { text-align: left; }
   .lede { font-size: 18px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
@@ -180,6 +190,16 @@ footer .wrap { padding-top: 28px; padding-bottom: 28px; display: flex; flex-wrap
     <div class="step"><span class="num">03</span><h3>Build</h3><p>We build the workflows you and I agree on after the audit, at a fixed price set before any work starts. You see each one working on your own data before it goes live.</p><p class="price">Fixed quote after your audit</p></div>
     <div class="step"><span class="num">04</span><h3>Train and support</h3><p>We teach your people to use AI in their own jobs, keep what we built running, and add the next workflow when you are ready.</p><p class="price">Priced to fit your business</p></div>
   </div>
+</section>
+
+<section id="pricing" class="wrap" style="padding-top: 24px; padding-bottom: 72px">
+  <div class="section-head"><p class="eyebrow">Pricing</p><h2>What it costs.</h2></div>
+  <ul class="pricing">
+    <li><h3>Initial discussion</h3><span class="cost free">Free</span><p class="note">A 30-minute call.</p></li>
+    <li><h3>AI audit</h3><span class="cost free">Free</span></li>
+    <li><h3>Workflows</h3><span class="cost">From $250 each</span><p class="note">A fixed price agreed before any work starts.</p></li>
+    <li><h3>Monthly support</h3><span class="cost">From $99 a month</span><p class="note">Optional.</p></li>
+  </ul>
 </section>
 
 <section id="approach" class="wrap" style="padding-top: 24px; padding-bottom: 96px">
