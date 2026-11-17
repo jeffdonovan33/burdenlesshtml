@@ -142,3 +142,6 @@ footer a:hover { color: #fff; }
   .nav nav .btn.small { margin-left: auto; }
   .page-hero { padding-top: 32px; padding-bottom: 48px; }
 }
+.with-photo { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 32px 56px; align-items: start; }
+.portrait { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; object-position: 100% 40%; display: block; }
+@media (max-width: 640px) { .with-photo { grid-template-columns: 1fr; } .portrait { width: 140px; height: 140px; } }
