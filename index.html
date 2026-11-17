@@ -5,145 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Burdenless AI | AI for businesses without a tech department</title>
 <meta name="description" content="Burdenless AI finds the hours your business loses to manual work, builds the AI workflow that gets them back, and trains your people to run it. Start with a free discussion.">
-<meta property="og:title" content="Burdenless AI">
-<meta property="og:description" content="AI for businesses without a tech department. Start with a free discussion.">
+<meta property="og:title" content="Burdenless AI | AI for businesses without a tech department">
+<meta property="og:description" content="Burdenless AI finds the hours your business loses to manual work, builds the AI workflow that gets them back, and trains your people to run it. Start with a free discussion.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://burdenlessai.com/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B1F3A'/%3E%3Cpath d='M20 14h14a11 11 0 0 1 7 19.5A12 12 0 0 1 35 50H20z' fill='none' stroke='%234ADE80' stroke-width='6' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-<style>
-:root {
-  --navy: #0B1F3A;
-  --navy-line: #25426B;
-  --ink: #0E1B2E;
-  --body: #3D4A5C;
-  --muted: #4A5568;
-  --on-navy: #D3DCE8;
-  --on-navy-muted: #B4C2D4;
-  --line: #DCE3EC;
-  --line-strong: #B7C3D1;
-  --tint: #EEF3F8;
-  --green: #177245;
-  --accent: #4ADE80;
-  --display: Inter, system-ui, sans-serif;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; font-family: Inter, system-ui, sans-serif; color: var(--ink); background: #fff; line-height: 1.55; font-size: 17px; -webkit-font-smoothing: antialiased; }
-h1, h2, h3, p, ul { margin: 0; }
-a { color: var(--navy); }
-a:hover { color: #1D3F6E; }
-a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
-.wrap { max-width: 1160px; margin: 0 auto; padding-left: 28px; padding-right: 28px; }
-.dark { background: var(--navy); color: #fff; }
-.eyebrow { font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); }
-.dark .eyebrow { color: var(--accent); }
-h2 { font-family: var(--display); font-weight: 700; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -0.02em; text-wrap: balance; }
-h3 { font-family: var(--display); font-weight: 600; font-size: 21px; line-height: 1.25; }
-.btn { display: inline-block; background: var(--accent); color: var(--navy); text-decoration: none; font-weight: 600; font-size: 17px; padding: 16px 26px; border-radius: 6px; transition: background 0.15s; }
-.btn:hover { background: #6EE7A0; color: var(--navy); }
-.btn.small { font-size: 15px; padding: 12px 20px; }
-.stack { display: flex; flex-direction: column; }
-.cols { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); }
-
-/* nav */
-.nav { padding-top: 22px; padding-bottom: 22px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; }
-.brand { font-family: var(--display); font-weight: 700; font-size: 22px; letter-spacing: -0.01em; color: #fff; text-decoration: none; }
-.brand:hover { color: #fff; }
-.nav nav { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; }
-.nav nav a:not(.btn) { color: var(--on-navy); text-decoration: none; font-size: 15px; padding: 12px 0; }
-.nav nav a:not(.btn):hover { color: #fff; }
-
-/* hero */
-.hero { padding-top: 72px; padding-bottom: 96px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 56px; align-items: center; }
-.hero .stack { gap: 26px; }
-h1 { font-family: var(--display); font-weight: 700; font-size: clamp(40px, 5vw, 68px); line-height: 1.06; letter-spacing: -0.03em; text-wrap: balance; }
-.lede { font-size: 20px; color: var(--on-navy); max-width: 34em; text-wrap: pretty; }
-.cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; }
-.cta-note { font-size: 15px; color: var(--on-navy-muted); }
-.card { background: #fff; color: var(--ink); border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 18px; box-shadow: 0 24px 60px rgba(0,0,0,0.35); }
-.card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
-.card-head strong { font-family: var(--display); font-weight: 600; font-size: 18px; }
-.card-head span { font-size: 13px; color: var(--muted); }
-.area { padding: 14px 0; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 4px; }
-.area .label { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); }
-.area .before { font-size: 15px; color: var(--muted); }
-.area .after { font-size: 16px; font-weight: 600; }
-.card-foot { border-top: 1px solid #C5CFDB; padding-top: 16px; font-size: 16px; }
-
-/* sections */
-section { scroll-margin-top: 16px; }
-.pad { padding-top: 96px; padding-bottom: 96px; }
-.section-head { display: flex; flex-direction: column; gap: 14px; margin-bottom: 44px; }
-.box { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 12px; }
-.box p, .point p, .about p, .work li span:last-child, .work-intro p { color: var(--body); }
-
-.steps { grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); }
-.step { border: 1px solid var(--line); border-radius: 10px; padding: 32px; display: flex; flex-direction: column; gap: 16px; }
-.step .num { font-family: var(--display); font-weight: 700; font-size: 44px; line-height: 1; color: var(--green); }
-.step h3 { font-size: 26px; }
-.step p { color: var(--body); }
-.step .price { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line); font-weight: 600; color: var(--ink); }
-.step .price.free { color: var(--green); }
-.step.first { background: var(--navy); color: #fff; border-color: var(--navy); }
-.step.first .num, .step.first .price { color: var(--accent); }
-.step.first p { color: var(--on-navy); }
-.step.first .price { border-top-color: var(--navy-line); }
-
-.pricing { list-style: none; padding: 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; max-width: 880px; }
-.pricing li { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; gap: 6px 24px; padding: 24px 32px; border-top: 1px solid var(--line); }
-.pricing li:first-child { border-top: 0; }
-.pricing h3 { font-size: 21px; }
-.pricing .cost { font-family: var(--display); font-weight: 600; font-size: 20px; color: var(--navy); text-align: right; }
-.pricing .cost.free { color: var(--green); }
-.pricing .note { grid-column: 1 / -1; color: var(--body); }
-
-.points { gap: 40px 48px; }
-.point { border-top: 3px solid var(--green); padding-top: 18px; display: flex; flex-direction: column; gap: 8px; }
-
-.tint { background: var(--tint); }
-.work { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr)); gap: 48px 64px; align-items: start; }
-.work-intro { display: flex; flex-direction: column; gap: 18px; }
-.work-intro p { max-width: 30em; }
-.work ul { list-style: none; padding: 0; display: flex; flex-direction: column; border-bottom: 1px solid var(--line-strong); }
-.work li { padding: 20px 0; border-top: 1px solid var(--line-strong); display: flex; flex-direction: column; gap: 4px; }
-.work li span:first-child { font-family: var(--display); font-weight: 600; font-size: 20px; }
-
-.about { max-width: 760px; display: flex; flex-direction: column; gap: 18px; }
-
-.closing .wrap.pad { display: flex; flex-direction: column; align-items: flex-start; gap: 26px; }
-.closing h2 { font-size: clamp(34px, 4.4vw, 60px); line-height: 1.05; letter-spacing: -0.025em; max-width: 16em; }
-.closing .lede { max-width: 32em; }
-.closing .email { color: #fff; font-size: 17px; padding: 12px 0; }
-footer { border-top: 1px solid var(--navy-line); }
-footer .wrap { padding-top: 28px; padding-bottom: 28px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; font-size: 14px; color: var(--on-navy-muted); }
-
-@media (max-width: 640px) {
-  body { font-size: 16px; }
-  .wrap { padding-left: 20px; padding-right: 20px; }
-  .hero { padding-top: 40px; padding-bottom: 64px; gap: 40px; }
-  .pad { padding-top: 64px; padding-bottom: 64px; }
-  .nav nav a:not(.btn) { display: none; }
-  .card, .step, .box { padding: 22px; }
-  .pricing li { grid-template-columns: 1fr; padding: 20px 22px; }
-  .pricing .cost { text-align: left; }
-  .lede { font-size: 18px; }
-}
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header class="dark" id="top">
   <div class="wrap nav">
-    <a class="brand" href="#top">Burdenless AI</a>
+    <a class="brand" href="index.html">Burdenless AI</a>
     <nav aria-label="Main">
       <a href="#how">How it works</a>
-      <a href="#approach">How we do it</a>
-      <a href="#work">What we take off your plate</a>
-      <a href="#about">About</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
       <a class="btn small" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2IzNTVSiTkthAw-MrWxS-xYI8bpk3GoOJ2xWqG12dR9WXm9BjoEsiIFPHNjbeuoDRSe6bQC50L" target="_blank" rel="noopener">Book a free call</a>
     </nav>
   </div>
@@ -192,16 +73,6 @@ footer .wrap { padding-top: 28px; padding-bottom: 28px; display: flex; flex-wrap
   </div>
 </section>
 
-<section id="pricing" class="wrap" style="padding-top: 24px; padding-bottom: 72px">
-  <div class="section-head"><p class="eyebrow">Pricing</p><h2>What it costs.</h2></div>
-  <ul class="pricing">
-    <li><h3>Initial discussion</h3><span class="cost free">Free</span><p class="note">A 30-minute call.</p></li>
-    <li><h3>AI audit</h3><span class="cost free">Free</span></li>
-    <li><h3>Workflows</h3><span class="cost">From $250 each</span><p class="note">A fixed price agreed before any work starts.</p></li>
-    <li><h3>Monthly support</h3><span class="cost">From $99 a month</span><p class="note">Optional.</p></li>
-  </ul>
-</section>
-
 <section id="approach" class="wrap" style="padding-top: 24px; padding-bottom: 96px">
   <div class="section-head"><p class="eyebrow">How we do it</p><h2 style="max-width: 20em">Here is exactly what happens when you work with us.</h2></div>
   <div class="cols points">
@@ -238,6 +109,7 @@ footer .wrap { padding-top: 28px; padding-bottom: 28px; display: flex; flex-wrap
     <h2>I start with your business, not the technology.</h2>
     <p>I'm Jeff Donovan. I have spent 20 years in sales, and I have helped businesses build AI workflows their teams use every day. I started Burdenless AI because the businesses that could gain the most from this are the ones with nobody on staff to set it up.</p>
     <p>You work with me directly. I am based outside Philadelphia and happy to meet in person.</p>
+    <p><a class="text-link" href="about.html">More about Jeff</a></p>
   </div>
 </section>
 </main>
@@ -254,7 +126,7 @@ footer .wrap { padding-top: 28px; padding-bottom: 28px; display: flex; flex-wrap
   <footer>
     <div class="wrap">
       <span>© 2026 Burdenless AI. Malvern, Pennsylvania.</span>
-      <span>AI audits, builds, and training for small businesses.</span>
+      <span class="foot-links"><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy policy</a></span>
     </div>
   </footer>
 </section>
